@@ -4,7 +4,7 @@ Sharky Snacker is an engaging arcade-style game where players help Sharky, the f
 
 ## Gameplay
 
-![Sharky Snacker Gameplay](demos/Alpha1GameDemo.mp4)
+![Sharky Snacker Gameplay](demos/alphaShowcase.gif)
 
 Navigate through the treacherous waters, outswim the Slavic Witch, and collect as many pelmeni as you can. Each level increases in difficulty, challenging your reflexes and strategy.
 
@@ -21,7 +21,6 @@ Navigate through the treacherous waters, outswim the Slavic Witch, and collect a
 - Retro-inspired graphics paired with charming sound effects.
 - An energetic soundtrack that keeps you in the zone.
 
-![Kaizen Gaming Logo](assets/KaizenGaming.png)
 
 ## Installation and Prerequisites
 
@@ -39,6 +38,8 @@ After installing the prerequisites, follow these steps:
 
 ## Credits
 Sharky Snacker is crafted with ❤️ by Kaizen Gaming. A huge shoutout to our dedicated team members for bringing this game to life.
+
+![Kaizen Gaming Logo](assets/KaizenGaming2-750x750p.png)
 
 ### License
 Sharky Snacker is shared under the DBAD (Don't Be a Dick) License. Feel free to use and share this game, but always give credit where it's due.
