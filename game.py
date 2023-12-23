@@ -1,6 +1,16 @@
-import pygame
+import os
 import sys
+import pygame
 from random import randint, choice
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 
 # Initialize Pygame and mixer for sound
 pygame.init()
@@ -19,12 +29,13 @@ pygame.display.set_caption('Sharky Snacker')
 clock = pygame.time.Clock()
 font = pygame.font.SysFont('Arial', 24)
 
-# Load images
-pelmeni_image = pygame.image.load('assets/pelmeniSingle-70x70p.png').convert_alpha()
-sharky_image_original = pygame.image.load('assets/Sharky-485x280p.png').convert_alpha()
-enemy_image_original = pygame.image.load('assets/MilaSnape.png').convert_alpha()
-heart_image = pygame.image.load('assets/heart.png').convert_alpha()
-kaizen_logo = pygame.image.load('assets/KaizenGaming2-750x750p.png').convert_alpha()
+# Load images using resource_path
+pelmeni_image = pygame.image.load(resource_path('assets/pelmeniSingle-70x70p.png')).convert_alpha()
+sharky_image_original = pygame.image.load(resource_path('assets/Sharky-485x280p.png')).convert_alpha()
+enemy_image_original = pygame.image.load(resource_path('assets/MilaSnape.png')).convert_alpha()
+heart_image = pygame.image.load(resource_path('assets/heart.png')).convert_alpha()
+kaizen_logo = pygame.image.load(resource_path('assets/KaizenGaming2-750x750p.png')).convert_alpha()
+
 
 # Scale images to fit the grid size
 sharky_image = pygame.transform.scale(sharky_image_original, (CELL_SIZE, CELL_SIZE))
@@ -41,11 +52,11 @@ sharky_image_down = pygame.transform.rotate(sharky_image_left, 90)
 sharky_current_image = sharky_image_left
 
 # Sound effects
-eating_sound = pygame.mixer.Sound('assets/slurp.mp3')
-death_sound = pygame.mixer.Sound('assets/roblox_OOF.mp3')
+eating_sound = pygame.mixer.Sound(resource_path('assets/slurp.mp3'))
+death_sound = pygame.mixer.Sound(resource_path('assets/roblox_OOF.mp3'))
 
 # Start background music
-pygame.mixer.music.load('assets/happy-happy-happy-song.mp3')
+pygame.mixer.music.load(resource_path('assets/happy-happy-happy-song.mp3'))
 pygame.mixer.music.play(-1)
 
 # Game variables
